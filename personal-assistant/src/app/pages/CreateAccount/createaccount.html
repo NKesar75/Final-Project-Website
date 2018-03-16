@@ -1,0 +1,17 @@
+<section class="main">
+        <div class="content" align="center">
+            <h1>Create Account</h1>
+      
+      
+          <form (ngSubmit)="createaccount()" >
+          
+            <input type="email" name="user" class="login-info" placeholder="YourEmail@Example.com" [(ngModel)]="email">
+          
+            <input type="password" class="login-info" name="pass" placeholder="Password" [(ngModel)]="password">
+            <button type="submit">Create Account</button>
+      
+          </form>
+      
+        </div>
+      
+      </section>

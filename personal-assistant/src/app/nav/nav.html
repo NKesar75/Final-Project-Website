@@ -9,10 +9,9 @@
         <a routerLink="/maps">Maps</a>
     </li>
     <li *ngIf="!authenticated">
-        <a (click)="login()">Login</a>
+        <a routerLink="/login">Login</a>
     </li>
     <li *ngIf="authenticated">
         <a (click)="logout()">Logout</a>
     </li>
-
 </ul>

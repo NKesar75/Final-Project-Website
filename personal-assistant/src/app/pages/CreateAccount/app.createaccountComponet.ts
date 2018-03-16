@@ -6,10 +6,10 @@ import { Router } from "@angular/router";
 import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  templateUrl: './Loginpage.html',
-  styleUrls: ['./loginpage.css']
+  templateUrl: './createaccount.html',
+  styleUrls: ['./createaccount.css']
 })
-export class LoginComponent implements OnInit {
+export class createaccountComponent implements OnInit {
 
   public form: FormGroup;
 
@@ -41,31 +41,17 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  createaccount() {
 
-  signInWithGoogle() {
-    this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((result) => {
-
-        this.router.navigate(['account']).then(function () {
-          window.location.reload();
-        });
-        console.log('Signed in successfully!');
-      }).catch((error) => {
-        console.log('Error signing in: ', error);
-      })
-  }
-
-  signInWithEmail() {
-
-      this.af.auth.signInWithEmailAndPassword(this.email,this.password)
+      this.af.auth.createUserWithEmailAndPassword(this.email,this.password)
       .then((result)=>{
         this.router.navigate(['account']).then(function(){
         window.location.reload();
       });
-      console.log('Signed in successfully!');
+      console.log('Account Created!');
     }).catch((error)=>{
-      window.alert('Error signing in: ' + error);
-      console.log('Error signing in: ',error);
+      window.alert('Error Creating account: ' + error);
+      console.log('Error Creating account: ',error);
     })
 
   }

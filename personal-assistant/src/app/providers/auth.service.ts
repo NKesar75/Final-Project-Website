@@ -29,20 +29,6 @@ export class AuthService {
 
 
 
-signInWithGoogle() {
-  return this._firebaseAuth.auth.signInWithPopup(
-    new firebase.auth.GoogleAuthProvider()
-  )
-}
-
-
-signInRegular(email:string, password:string) {
-  const credential = firebase.auth.EmailAuthProvider.credential( email, password );
-
-  return this._firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
-}
-
-
 isLoggedIn() {
 if (this.userDetails == null ) {
     return false;
@@ -51,9 +37,4 @@ if (this.userDetails == null ) {
   }
 }
 
-
-logout() {
-  this._firebaseAuth.auth.signOut()
-   .then((res) => this.router.navigate(['/']));
-}
 }

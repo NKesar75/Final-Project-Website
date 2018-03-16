@@ -1,0 +1,47 @@
+.login-info{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background: #fff;
+    padding: 15px;
+    outline: none;
+    width: 50%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+}
+
+input:focus {
+    border: 1px solid #777;
+  }
+  button {
+    background: #1451d6;
+    color: #fff;
+    border: 1px solid #5d8ffc;
+    border-radius: 15px;
+    padding: 15px;
+    display: block;
+    width: 50%;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+  }
+
+  button:hover {
+  background: #fff;
+  color: #5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
+}
+.login-google{
+    background: rgb(34, 211, 34);
+}
+a{
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
+    background: #6db0e8;
+    cursor: pointer;
+}

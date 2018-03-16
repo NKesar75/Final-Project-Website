@@ -6,10 +6,10 @@ import { Router } from "@angular/router";
 import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  templateUrl: './Loginpage.html',
-  styleUrls: ['./loginpage.css']
+  templateUrl: './forgotpassword.html',
+  styleUrls: ['./forgotpassword.css']
 })
-export class LoginComponent implements OnInit {
+export class forgotpasswordComponent implements OnInit {
 
   public form: FormGroup;
 
@@ -42,30 +42,18 @@ export class LoginComponent implements OnInit {
   }
 
 
-  signInWithGoogle() {
-    this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((result) => {
+  sendpasswordreset() {
 
-        this.router.navigate(['account']).then(function () {
-          window.location.reload();
-        });
-        console.log('Signed in successfully!');
-      }).catch((error) => {
-        console.log('Error signing in: ', error);
-      })
-  }
-
-  signInWithEmail() {
-
-      this.af.auth.signInWithEmailAndPassword(this.email,this.password)
+      this.af.auth.sendPasswordResetEmail(this.email)
       .then((result)=>{
-        this.router.navigate(['account']).then(function(){
+        this.router.navigate(['login']).then(function(){
         window.location.reload();
+        window.alert('successfully sent email!');
       });
-      console.log('Signed in successfully!');
+      console.log('successfully sent email!');
     }).catch((error)=>{
-      window.alert('Error signing in: ' + error);
-      console.log('Error signing in: ',error);
+      window.alert('Error sending email: ' + error);
+      console.log('Error sending email: ',error);
     })
 
   }
