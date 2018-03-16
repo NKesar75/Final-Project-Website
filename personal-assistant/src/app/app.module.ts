@@ -20,18 +20,7 @@ import { mapsComponent } from './pages/Maps/app.mapsComponent'
 
 import { AuthService } from './providers/auth.service'
 import { AuthGuardService } from './providers/auth-guard.service'
-
-
-export const firebaseConfig = {
-  
-  apiKey: "AIzaSyBUSvKkyRV22MAhuhHZLeI_IpRrDD52iNk",
-  authDomain: "personalassistant-ec554.firebaseapp.com",
-  databaseURL: "https://personalassistant-ec554.firebaseio.com",
-  projectId: "personalassistant-ec554",
-  storageBucket: "personalassistant-ec554.appspot.com",
-  messagingSenderId: "720590166253"
-  
-};
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -45,7 +34,7 @@ export const firebaseConfig = {
      // { path: 'login', component: LoginComponent },
       { path: 'maps', component: mapsComponent }
     ]),
-    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],

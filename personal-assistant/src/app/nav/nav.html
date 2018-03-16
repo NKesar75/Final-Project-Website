@@ -1,14 +1,18 @@
 <ul>
-    <li>
+    <li *ngIf="authenticated">
         <a routerLink="/">Home</a>
     </li>
-    <li>
+    <li *ngIf="authenticated">
         <a routerLink="/account">Account</a>
     </li>
-    <li>
+    <li *ngIf="authenticated">
         <a routerLink="/maps">Maps</a>
     </li>
-    <li>
-        <a routerLink="/login">login</a>
+    <li *ngIf="!authenticated">
+        <a (click)="login()">Login</a>
     </li>
+    <li *ngIf="authenticated">
+        <a (click)="logout()">Logout</a>
+    </li>
+
 </ul>
