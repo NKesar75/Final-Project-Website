@@ -1,0 +1,120 @@
+h1 {
+  color: black;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 35px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  display: block;
+}
+
+a{
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  background: black;
+}
+
+a:hover{
+  color: red;
+}
+
+a, a:hover{
+  -webkit-transition: all .4s ease-in-out; 
+  -moz-transition: all .4s ease-in-out; 
+  transition:all .4s ease-in-out; 
+}
+
+body{
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  margin: 0 auto;
+  padding: 0;
+  background: #6db0e8;
+}
+
+#container{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+footer{
+  background: black;
+  color: white;
+  min-height: 50px;
+}
+
+#container .maps{
+  display: block;
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#container .main{
+  display: block;
+  margin: 0;
+  margin: 25px;
+  padding: 0 10px;
+}
+
+header{
+  display: block;
+  width: 100%;
+  height: 80px;
+  background-color: #000033;
+  color: white;
+  position: relative;
+}
+
+header .logo img{
+  position: absolute;
+  margin-left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+nav {
+display: inline-block;
+width: 100%;
+font-size: 0;
+line-height: 0;
+margin: 0 auto;
+padding: 0;
+background: black;
+color: white;
+}
+
+nav, 
+nav ul{
+  margin: 0;
+  padding: 0;
+
+} 
+
+nav ul li{
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+nav ul li a{
+  display: block;
+  font-size: 16px;
+  line-height: normal;
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 15px 20px;
+
+}
+
+nav ul li a:hover{
+background: white;
+color: blue;
+  
+}
