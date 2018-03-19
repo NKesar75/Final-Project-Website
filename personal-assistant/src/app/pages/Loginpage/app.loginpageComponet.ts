@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       (auth) => {
         if (auth != null) {
 
-          this.router.navigate(['account']).then(function () {
+          this.router.navigate(['/']).then(function () {
             window.location.reload();
           });
 
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     this.af.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
       .then((result) => {
 
-        this.router.navigate(['account']).then(function () {
+        this.router.navigate(['/']).then(function () {
           window.location.reload();
         });
         console.log('Signed in successfully!');
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
 
       this.af.auth.signInWithEmailAndPassword(this.email,this.password)
       .then((result)=>{
-        this.router.navigate(['account']).then(function(){
+        this.router.navigate(['/']).then(function(){
         window.location.reload();
       });
       console.log('Signed in successfully!');

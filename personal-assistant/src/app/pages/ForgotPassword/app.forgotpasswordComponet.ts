@@ -29,7 +29,7 @@ export class forgotpasswordComponent implements OnInit {
       (auth) => {
         if (auth != null) {
 
-          this.router.navigate(['account']).then(function () {
+          this.router.navigate(['/']).then(function () {
             window.location.reload();
           });
 

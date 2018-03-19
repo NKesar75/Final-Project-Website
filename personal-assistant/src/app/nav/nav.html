@@ -1,17 +1,40 @@
 <ul>
-    <li *ngIf="authenticated">
-        <a routerLink="/">Home</a>
-    </li>
-    <li *ngIf="authenticated">
-        <a routerLink="/account">Account</a>
-    </li>
-    <li *ngIf="authenticated">
-        <a routerLink="/maps">Maps</a>
-    </li>
-    <li *ngIf="!authenticated">
-        <a routerLink="/login">Login</a>
-    </li>
-    <li *ngIf="authenticated">
-        <a (click)="logout()">Logout</a>
-    </li>
+    <div *ngIf="authenticated">
+        <li>
+            <a routerLink="/">Home</a>
+        </li>
+        <li>
+            <a routerLink="/account">Manage Account</a>
+        </li>
+        <li>
+            <a>Finance</a>
+        </li>
+        <li>
+            <a>Food</a>
+        </li>
+        <li>
+            <a routerLink="/maps">Maps</a>
+        </li>
+        <li>
+            <a>Search</a>
+        </li>
+        <li>
+            <a>Scheduling</a>
+        </li>
+        <li>
+            <a>Weather</a>
+        </li>
+        <li>
+            <a>Youtube</a>
+        </li>
+        <li>
+            <a (click)="logout()">Logout</a>
+        </li>
+    </div>
+    <div *ngIf="!authenticated">
+        <li>
+            <a routerLink="/login">Login</a>
+        </li>
+    </div>
+
 </ul>

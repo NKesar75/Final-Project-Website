@@ -29,7 +29,7 @@ export class createaccountComponent implements OnInit {
       (auth) => {
         if (auth != null) {
 
-          this.router.navigate(['account']).then(function () {
+          this.router.navigate(['/']).then(function () {
             window.location.reload();
           });
 
@@ -45,7 +45,7 @@ export class createaccountComponent implements OnInit {
 
       this.af.auth.createUserWithEmailAndPassword(this.email,this.password)
       .then((result)=>{
-        this.router.navigate(['account']).then(function(){
+        this.router.navigate(['/']).then(function(){
         window.location.reload();
       });
       console.log('Account Created!');

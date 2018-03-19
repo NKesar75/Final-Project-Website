@@ -45,7 +45,13 @@ import { environment } from '../environments/environment';
       
       //authecaition needed
       { path: 'account', canActivate: [AuthGuardService], component: accountComponent },
-      { path: 'maps', canActivate: [AuthGuardService], component: mapsComponent }
+      { path: 'maps', canActivate: [AuthGuardService], component: mapsComponent },
+
+      //bad routes
+      { path: '', redirectTo: 'login', pathMatch: 'full'},
+      { path: '**', redirectTo: 'login', pathMatch: 'full'
+    }
+
     ]),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -69,3 +75,4 @@ import { environment } from '../environments/environment';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
