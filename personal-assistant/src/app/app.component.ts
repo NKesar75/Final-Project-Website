@@ -15,7 +15,8 @@ import { mapsComponent } from './pages/Maps/app.mapsComponent'
 import { LoginComponent } from './pages/Loginpage/app.loginpageComponet';
 import { createaccountComponent } from './pages/CreateAccount/app.createaccountComponet';
 import { forgotpasswordComponent } from './pages/Forgotpassword/app.forgotpasswordComponet';
-
+import { SearchComponent } from './pages/search/search-component.component';
+import { YoutubeComponent } from './pages/youtube/youtube.component';
 
 @Component({
   selector: 'my-app',
