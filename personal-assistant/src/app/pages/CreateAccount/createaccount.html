@@ -5,9 +5,9 @@
       
           <form (ngSubmit)="createaccount()" >
           
-            <input type="text" name="firstname" class="login-info" placeholder="First Name" [(ngModel)]="client.firstname">
-            <input type="text" name="lastname" class="login-info" placeholder="Last Name" [(ngModel)]="client.lastname">
-            <input type="date" name="dob" class="login-info" placeholder="dateofbirth" [(ngModel)]="client.DOB">
+            <input type="text" name="mFirstname" class="login-info" placeholder="First Name" [(ngModel)]="client.mFirstname">
+            <input type="text" name="mLastname" class="login-info" placeholder="Last Name" [(ngModel)]="client.mLastname">
+            <input type="date" name="mDOB" class="login-info" placeholder="dateofbirth" [(ngModel)]="client.mDOB">
             <input type="email" name="user" class="login-info" placeholder="YourEmail@Example.com" [(ngModel)]="email">
             <input type="password" class="login-info" name="pass" placeholder="Password" [(ngModel)]="password">
             <button type="submit">Create Account</button>

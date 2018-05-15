@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { YoutubePlayerModule } from 'ngx-youtube-player';
+import { CommonModule } from '@angular/common';
 
 //google
 import { AgmCoreModule } from '@agm/core';
@@ -12,7 +13,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { DatabaseService } from './providers/database.service';
+import { userDatabaseService } from './providers/userdatabase.service';
 
 //pages
 import { AppComponent } from './app.component';
@@ -33,12 +34,18 @@ import { YoutubeComponent } from './pages/youtube/youtube.component';
 import { AuthService } from './providers/auth.service'
 import { AuthGuardService } from './providers/auth-guard.service'
 import { environment } from '../environments/environment';
+import { WeatherComponent } from './pages/weather/weather.component';
+
+//JsonParsers
+import { WeatherJson } from './JsonParsers/WeatherJson.service';
 
 
 @NgModule({
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
+    HttpModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAdd5-uTaKwUlvS5lJGmQf-JMay2glb-Hw'
@@ -55,6 +62,7 @@ import { environment } from '../environments/environment';
       { path: 'maps', canActivate: [AuthGuardService], component: mapsComponent },
       { path: 'search', canActivate: [AuthGuardService], component: SearchComponent },
       { path: 'youtube', canActivate: [AuthGuardService], component: YoutubeComponent },
+      { path: 'weather', canActivate: [AuthGuardService], component: WeatherComponent },
 
       //bad routes
       { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -81,10 +89,11 @@ import { environment } from '../environments/environment';
       createaccountComponent,
       forgotpasswordComponent,
       SearchComponent,
-      YoutubeComponent
+      YoutubeComponent,
+      WeatherComponent
     ],
 
-  providers: [AuthService, AuthGuardService, DatabaseService],
+  providers: [AuthService, AuthGuardService, userDatabaseService, WeatherJson],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

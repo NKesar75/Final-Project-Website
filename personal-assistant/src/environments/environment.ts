@@ -12,5 +12,10 @@ export const environment = {
     projectId: "personalassistant-ec554",
     storageBucket: "personalassistant-ec554.appspot.com",
     messagingSenderId: "720590166253"
+  },
+
+  dialogflow: {
+    angualrbot: 'fb57e9c4edb34e31bfdd91ece7f5427c'
   }
+  
 };

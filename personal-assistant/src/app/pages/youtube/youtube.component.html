@@ -1,20 +1,9 @@
-<div class="container">
-    <section class="panel panel-info">
-      <div class="panel-body">
-        <youtube-player 
-          [videoId]="id" 
-          (ready)="savePlayer($event)"
-          (change)="onStateChange($event)"
-        >
-        </youtube-player>
-      </div>
-    </section>
-    
-    <div class="col-md-12">
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
-        <button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
-      </div>
-    </div>
-    
-  
+<div class="container" align="center">
+  <h1 align="center">ITS NOT WORLDSTAR!</h1>
+
+  <div>
+    <youtube-player [videoId]="id" 
+    (ready)="savePlayer($event)" 
+    (change)="onStateChange($event)" height="500px" width="100%">
+    </youtube-player>
+  </div>

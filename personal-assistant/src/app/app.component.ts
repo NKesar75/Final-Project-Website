@@ -17,6 +17,7 @@ import { createaccountComponent } from './pages/CreateAccount/app.createaccountC
 import { forgotpasswordComponent } from './pages/Forgotpassword/app.forgotpasswordComponet';
 import { SearchComponent } from './pages/search/search-component.component';
 import { YoutubeComponent } from './pages/youtube/youtube.component';
+import { WeatherComponent } from './pages/weather/weather.component';
 
 @Component({
   selector: 'my-app',

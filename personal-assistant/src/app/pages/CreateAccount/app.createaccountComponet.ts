@@ -4,7 +4,7 @@ import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase/app';
 import { Router } from "@angular/router";
 import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { DatabaseService } from '../../providers/database.service';
+import { userDatabaseService } from '../../providers/userdatabase.service';
 import { user } from '../../user/user';
 
 @Component({
@@ -14,18 +14,18 @@ import { user } from '../../user/user';
 export class createaccountComponent implements OnInit {
 
   public form: FormGroup;
-  client: user = new user();
+  client: user;
   email = '';
   password = '';
-  firstname = '';
-  lastname = '';
-  dob = '';
+  Firstname = '';
+  Lastname = '';
+  Dob = '';
   errorMessage = '';
   error: { name: string, message: string } = { name: '', message: '' };
 
   user: Observable<firebase.User>;
-  constructor(public af: AngularFireAuth, public db: DatabaseService, private router: Router) {
-
+  constructor(public af: AngularFireAuth, public db: userDatabaseService, private router: Router) {
+    this.client = new user();
     this.af.authState.subscribe(
       (auth) => {
         if (auth != null) {
@@ -42,11 +42,9 @@ export class createaccountComponent implements OnInit {
   }
 
   createaccount() {
-  
     this.af.auth.createUserWithEmailAndPassword(this.email, this.password)
       .then((result) => {
         this.db.createuser(this.client);
-        this.client = new user();
         this.router.navigate(['/']).then(function () {
           window.location.reload();
         });

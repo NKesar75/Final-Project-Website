@@ -24,11 +24,4 @@ export class YoutubeComponent implements OnInit {
     this.player = player;
   }
   
-  playVideo() {
-    this.player.playVideo();
-  }
-  
-  pauseVideo() {
-    this.player.pauseVideo();
-  }
 }
